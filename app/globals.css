@@ -1,0 +1,208 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Citranex brand palette */
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-brand-lilac: var(--brand-lilac);
+  --color-brand-ink: var(--brand-ink);
+
+  --font-sans: var(--font-raleway), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+:root {
+  color-scheme: dark;
+
+  /* Brand raw tokens */
+  --brand-purple: #7a3cff;
+  --brand-blue: #3a7dff;
+  --brand-cyan: #00e1ff;
+  --brand-lilac: #bfbfff;
+  --brand-ink: #0d0d14;
+
+  /* Semantic tokens (dark-first site) */
+  --background: #0d0d14;
+  --foreground: #ffffff;
+  --card: #0f0f19;
+  --card-foreground: #ffffff;
+  --popover: #10101c;
+  --popover-foreground: #ffffff;
+  --primary: #7a3cff;
+  --primary-foreground: #ffffff;
+  --secondary: #16162400;
+  --secondary-foreground: #bfbfff;
+  --muted: #14141f;
+  --muted-foreground: #9a9ab5;
+  --accent: #3a7dff;
+  --accent-foreground: #ffffff;
+  --destructive: oklch(0.62 0.22 25);
+  --border: rgba(191, 191, 255, 0.1);
+  --input: rgba(191, 191, 255, 0.14);
+  --ring: #7a3cff;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: rgba(122, 60, 255, 0.35);
+    color: #ffffff;
+  }
+}
+
+@layer utilities {
+  /* Signature brand gradient (purple -> blue -> cyan) */
+  .text-gradient-brand {
+    background-image: linear-gradient(100deg, #7a3cff 0%, #3a7dff 52%, #00e1ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-gradient-brand {
+    background-image: linear-gradient(100deg, #7a3cff 0%, #3a7dff 55%, #00e1ff 120%);
+  }
+  .bg-gradient-brand-soft {
+    background-image: linear-gradient(120deg, #1a1140 0%, #131a3d 45%, #0c1f36 100%);
+  }
+  .border-gradient-brand {
+    border-color: transparent;
+    background-image: linear-gradient(var(--card), var(--card)),
+      linear-gradient(120deg, #7a3cff, #3a7dff, #00e1ff);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+  .glow-brand {
+    box-shadow: 0 0 60px -12px rgba(122, 60, 255, 0.45);
+  }
+
+  /* Subtle technological backdrops */
+  .bg-dot-grid {
+    background-image: radial-gradient(rgba(191, 191, 255, 0.14) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
+    mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  }
+  .mask-fade-radial {
+    -webkit-mask-image: radial-gradient(circle at center, #000 40%, transparent 72%);
+    mask-image: radial-gradient(circle at center, #000 40%, transparent 72%);
+  }
+}
+
+/* Motion primitives -------------------------------------------------- */
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ring-rotate {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+.animate-pulse-glow {
+  animation: pulse-glow 5s ease-in-out infinite;
+}
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+.animate-ring-rotate {
+  animation: ring-rotate 26s linear infinite;
+}
+
+/* Scroll reveal ------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-float-slow,
+  .animate-pulse-glow,
+  .animate-spin-slow,
+  .animate-ring-rotate {
+    animation: none !important;
+  }
+}
