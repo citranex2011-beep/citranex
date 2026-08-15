@@ -23,7 +23,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={80}>
-            <h1 className="mt-5 text-balance font-sans text-5xl font-extrabold uppercase leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 text-balance font-sans text-[2.7rem] font-extrabold uppercase leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl">
               Soluções que
               <br />
               <span className="text-gradient-brand">transformam.</span>
