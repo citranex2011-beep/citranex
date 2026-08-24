@@ -6,7 +6,7 @@ export function CTA() {
     <section id="contato" className="border-t border-border py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-brand p-8 sm:p-12 lg:p-14">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-brand-animated p-8 sm:p-12 lg:p-14">
             {/* Elementos gráficos digitais sutis */}
             <div className="pointer-events-none absolute inset-0" aria-hidden="true">
               <div className="absolute right-8 top-6 h-24 w-24 bg-dot-grid opacity-25" />
