@@ -73,18 +73,6 @@ export const services: {
     icon: "social",
   },
   {
-    title: "Automação",
-    description:
-      "Automatizamos tarefas e integramos processos para reduzir trabalhos manuais, aumentar a produtividade e tornar sua operação mais eficiente.",
-    icon: "automation",
-  },
-  {
-    title: "Desenvolvimento de Software",
-    description:
-      "Criamos sistemas personalizados, seguros e escaláveis, desenvolvidos para atender às necessidades e impulsionar o crescimento do seu negócio.",
-    icon: "software",
-  },
-  {
     title: "Criativos Impressos",
     description:
       "Materiais gráficos que comunicam com impacto: folders, cartões, banners, catálogos e muito mais.",
@@ -95,6 +83,18 @@ export const services: {
     description:
       "Construímos marcas fortes e memoráveis com design estratégico e direção criativa completa.",
     icon: "identity",
+  },
+  {
+    title: "Automação",
+    description:
+      "Automatizamos tarefas e integramos processos para reduzir trabalhos manuais, aumentar a produtividade e tornar sua operação mais eficiente.",
+    icon: "automation",
+  },
+  {
+    title: "Desenvolvimento de Software",
+    description:
+      "Criamos sistemas personalizados, seguros e escaláveis, desenvolvidos para atender às necessidades e impulsionar o crescimento do seu negócio.",
+    icon: "software",
   },
 ]
 
@@ -151,10 +151,10 @@ export const processSteps: {
 export const footerServices = [
   "Criação de Sites",
   "Mídias Sociais",
-  "Automação",
-  "Desenvolvimento de Software",
   "Criativos Impressos",
   "Identidade Visual",
+  "Automação",
+  "Desenvolvimento de Software",
 ]
 
 export const siteMeta = {

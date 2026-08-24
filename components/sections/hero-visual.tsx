@@ -18,7 +18,7 @@ export function HeroVisual() {
         fill="none"
       >
         <path d="M10 40 H90 M40 80 H150 M20 120 H120" stroke="currentColor" strokeWidth="1" />
-        <circle cx="150" cy="40" r="2.5" fill="#00E1FF" />
+        <circle cx="90" cy="40" r="2.5" fill="#00E1FF" />
         <circle cx="120" cy="120" r="2.5" fill="#3A7DFF" />
       </svg>
 
