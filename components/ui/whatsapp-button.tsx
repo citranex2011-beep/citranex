@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { whatsappLink } from "@/data/site"
+import { MagneticButton } from "@/components/ui/magnetic-button"
 
 /** Botão que abre o WhatsApp configurado em data/site.ts. */
 export function WhatsAppButton({
@@ -13,7 +14,8 @@ export function WhatsAppButton({
   variant?: "solid" | "outline"
 }) {
   return (
-    <a
+    <MagneticButton
+      as="a"
       href={whatsappLink()}
       target="_blank"
       rel="noopener noreferrer"
@@ -28,6 +30,6 @@ export function WhatsAppButton({
     >
       {children}
       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-    </a>
+    </MagneticButton>
   )
 }

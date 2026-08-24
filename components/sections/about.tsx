@@ -2,6 +2,7 @@ import { ArrowRight, TrendingUp, Users, Target, Sparkles } from "lucide-react"
 import { SectionLabel } from "@/components/ui/section-title"
 import { Reveal } from "@/components/ui/reveal"
 import { CountUp } from "@/components/ui/count-up"
+import { MagneticButton } from "@/components/ui/magnetic-button"
 import { TechGlobe } from "@/components/sections/tech-globe"
 import { stats } from "@/data/site"
 
@@ -42,13 +43,14 @@ export function About() {
               </p>
             </Reveal>
             <Reveal delay={240}>
-              <a
+              <MagneticButton
+                as="a"
                 href="#processo"
                 className="group mt-8 inline-flex items-center gap-2 rounded-lg border border-border px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-foreground transition-all duration-300 hover:border-brand-purple/60 hover:text-brand-lilac"
               >
                 Saiba mais sobre nós
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+              </MagneticButton>
             </Reveal>
           </div>
 
