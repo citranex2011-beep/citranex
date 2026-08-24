@@ -5,8 +5,9 @@ import { useEffect, useRef, useState } from "react"
 const NUMBER_PATTERN = /^(\D*)(\d+(?:\.\d+)?)(.*)$/
 const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3)
 
-function format(n: number, prefix: string, suffix: string) {
-  return `${prefix}${Math.round(n)}${suffix}`
+function format(n: number, prefix: string, suffix: string, pad: number) {
+  const rounded = Math.round(n).toString().padStart(pad, "0")
+  return `${prefix}${rounded}${suffix}`
 }
 
 export function CountUp({
@@ -22,10 +23,11 @@ export function CountUp({
   const target = match ? parseFloat(match[2]) : null
   const prefix = match ? match[1] : ""
   const suffix = match ? match[3] : ""
+  const pad = match ? match[2].length : 0
 
   const ref = useRef<HTMLSpanElement>(null)
   const startedRef = useRef(false)
-  const initial = target === null || !animate ? value : format(0, prefix, suffix)
+  const initial = target === null || !animate ? value : format(0, prefix, suffix, pad)
   const [display, setDisplay] = useState(initial)
 
   useEffect(() => {
@@ -35,7 +37,7 @@ export function CountUp({
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     if (reduced) {
-      setDisplay(format(target, prefix, suffix))
+      setDisplay(format(target, prefix, suffix, pad))
       return
     }
 
@@ -48,9 +50,9 @@ export function CountUp({
             const start = performance.now()
             const tick = (now: number) => {
               const t = Math.min(1, (now - start) / duration)
-              setDisplay(format(target * easeOutCubic(t), prefix, suffix))
+              setDisplay(format(target * easeOutCubic(t), prefix, suffix, pad))
               if (t < 1) requestAnimationFrame(tick)
-              else setDisplay(format(target, prefix, suffix))
+              else setDisplay(format(target, prefix, suffix, pad))
             }
             requestAnimationFrame(tick)
           }
@@ -60,7 +62,7 @@ export function CountUp({
     )
     observer.observe(el)
     return () => observer.disconnect()
-  }, [target, animate, prefix, suffix, duration])
+  }, [target, animate, prefix, suffix, pad, duration])
 
   if (target === null) {
     return <>{value}</>

@@ -1,6 +1,7 @@
 import { Search, Lightbulb, Pencil, Code, Rocket } from "lucide-react"
 import { SectionLabel } from "@/components/ui/section-title"
 import { Reveal } from "@/components/ui/reveal"
+import { CountUp } from "@/components/ui/count-up"
 import { processSteps, type ProcessIcon } from "@/data/site"
 
 const iconMap: Record<ProcessIcon, typeof Search> = {
@@ -51,7 +52,7 @@ export function Process() {
 
                   <div className="lg:mt-6">
                     <p className="font-mono text-xs font-semibold tracking-[0.2em] text-brand-lilac">
-                      {step.step}
+                      <CountUp value={step.step} />
                     </p>
                     <h3 className="mt-1 text-base font-bold text-foreground">{step.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground lg:mx-auto lg:max-w-[15rem]">
