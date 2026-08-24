@@ -1,6 +1,7 @@
 import { ArrowRight, TrendingUp, Users, Target, Sparkles } from "lucide-react"
 import { SectionLabel } from "@/components/ui/section-title"
 import { Reveal } from "@/components/ui/reveal"
+import { CountUp } from "@/components/ui/count-up"
 import { TechGlobe } from "@/components/sections/tech-globe"
 import { stats } from "@/data/site"
 
@@ -65,7 +66,7 @@ export function About() {
                   <div className="flex h-full flex-col gap-3 p-5 sm:p-6">
                     <Icon className="h-5 w-5 text-brand-lilac" />
                     <p className="font-sans text-2xl font-extrabold text-gradient-brand sm:text-3xl">
-                      {stat.value}
+                      <CountUp value={stat.value} animate={stat.animate ?? true} />
                     </p>
                     <p className="text-xs leading-relaxed text-muted-foreground">
                       {stat.label}

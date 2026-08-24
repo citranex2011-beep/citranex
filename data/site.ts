@@ -102,7 +102,7 @@ export const services: {
 export const stats = [
   { value: "+230", label: "projetos entregues", icon: "trending" as const },
   { value: "+50", label: "clientes atendidos", icon: "users" as const },
-  { value: "100%", label: "compromisso com resultados", icon: "target" as const },
+  { value: "100%", label: "compromisso com resultados", icon: "target" as const, animate: false },
   { value: "Soluções", label: "personalizadas para cada marca", icon: "sparkles" as const },
 ]
 
