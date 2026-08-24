@@ -1,7 +1,7 @@
-import { ArrowRight, MessageSquareHeart, MonitorSmartphone, Workflow, Code, Printer, Gem } from "lucide-react"
+import { MessageSquareHeart, MonitorSmartphone, Workflow, Code, Printer, Gem } from "lucide-react"
 import type { ServiceIcon } from "@/data/site"
 
-const iconMap: Record<ServiceIcon, typeof ArrowRight> = {
+const iconMap: Record<ServiceIcon, typeof MessageSquareHeart> = {
   social: MessageSquareHeart,
   sites: MonitorSmartphone,
   automation: Workflow,
@@ -35,10 +35,6 @@ export function ServiceCard({
       <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
         {description}
       </p>
-
-      <span className="mt-6 inline-flex text-brand-lilac">
-        <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1.5" />
-      </span>
     </article>
   )
 }
