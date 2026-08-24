@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react"
 import { Reveal } from "@/components/ui/reveal"
 import { SocialLinks } from "@/components/ui/social-links"
+import { ScrollIndicator } from "@/components/ui/scroll-indicator"
 import { HeroVisual } from "@/components/sections/hero-visual"
 
 export function Hero() {
@@ -64,6 +65,8 @@ export function Hero() {
           <HeroVisual />
         </div>
       </div>
+
+      <ScrollIndicator />
     </section>
   )
 }
