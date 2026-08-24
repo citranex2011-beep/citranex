@@ -45,6 +45,7 @@ This includes: `WHATSAPP_NUMBER`, `WHATSAPP_MESSAGE`, `contact`, `socialLinks`, 
 - Currently both branches are at the same commit (`b934001`).
 - Remote: `https://github.com/citranex2011-beep/citranex.git`
 - No CI workflows, no pre-commit hooks.
+- **`NEVER push to `origin/main` (or any remote) without explicit authorization from the user.** Even if the user said "commit", "fix", "apply", etc., those are local-only actions. The user reviews locally, then explicitly asks to push. Confirm before every push.
 
 ## Known gotchas
 1. **`components/sections/footer.tsx` line 2 used to read `import { Logo } from <citranex-logo></citranex-logo>`** (invalid JSX-as-import, blocked the build). Fixed in commit `7d53813`; the import now correctly points to `@/components/ui/logo`. If you see that string again in the file, something reverted the fix.
