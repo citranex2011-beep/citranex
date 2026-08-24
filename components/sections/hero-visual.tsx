@@ -31,13 +31,11 @@ export function HeroVisual() {
 
       {/* Símbolo flutuante */}
       <div className="absolute left-1/2 top-[42%] flex -translate-x-1/2 -translate-y-1/2 animate-float-slow">
-        <div className="translate-y-0">
-          <div className="relative">
-            <div className="absolute inset-0 -z-10 scale-125 rounded-full bg-brand-blue/25 blur-2xl" />
-            <CitranexMark
-              className="h-[125px] w-auto drop-shadow-[0_18px_40px_rgba(122,60,255,0.55)] sm:h-[173px]"
-            />
-          </div>
+        <div className="relative">
+          <div className="absolute inset-0 -z-10 scale-125 rounded-full bg-brand-blue/25 blur-2xl" />
+          <CitranexMark
+            className="h-40 w-auto drop-shadow-[0_18px_40px_rgba(122,60,255,0.55)] sm:h-52"
+          />
         </div>
       </div>
     </div>
