@@ -1,10 +1,11 @@
-import { ArrowRight, MessageSquareHeart, MonitorSmartphone, Rocket, Printer, Gem } from "lucide-react"
+import { ArrowRight, MessageSquareHeart, MonitorSmartphone, Workflow, Code, Printer, Gem } from "lucide-react"
 import type { ServiceIcon } from "@/data/site"
 
-const iconMap: Record<ServiceIcon, typeof Rocket> = {
+const iconMap: Record<ServiceIcon, typeof ArrowRight> = {
   social: MessageSquareHeart,
   sites: MonitorSmartphone,
-  landing: Rocket,
+  automation: Workflow,
+  software: Code,
   print: Printer,
   identity: Gem,
 }

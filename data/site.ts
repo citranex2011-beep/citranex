@@ -11,16 +11,15 @@
 /* ----------------------------- Contato ----------------------------- */
 // Número usado nos botões "FALE CONOSCO" e "VAMOS CONVERSAR".
 // Formato internacional, apenas dígitos (ex.: 55 + DDD + número).
-export const WHATSAPP_NUMBER = "5511945551234"
+export const WHATSAPP_NUMBER = "5515974067945"
 
 export const WHATSAPP_MESSAGE =
   "Olá! Vim pelo site da Citranex e gostaria de conversar sobre um projeto."
 
 export const contact = {
-  phoneLabel: "(11) 94555-1234",
+  phoneLabel: "(15) 97406-7945",
   whatsappNumber: WHATSAPP_NUMBER,
-  email: "contato@citranex.com.br",
-  city: "São Paulo - SP",
+  city: "Sorocaba - SP",
 }
 
 /** Monta o link de WhatsApp com a mensagem pré-preenchida. */
@@ -33,7 +32,7 @@ export function whatsappLink(
 
 /* ----------------------------- Redes ------------------------------- */
 export const socialLinks = [
-  { name: "Instagram", href: "https://instagram.com/citranex", icon: "instagram" as const },
+  { name: "Instagram", href: "https://www.instagram.com/citranex?igsi=MWprb3VucWcyNzI3cg==", icon: "instagram" as const },
   { name: "LinkedIn", href: "https://linkedin.com/company/citranex", icon: "linkedin" as const },
   { name: "Behance", href: "https://behance.net/citranex", icon: "behance" as const },
 ]
@@ -41,9 +40,8 @@ export const socialLinks = [
 /* --------------------------- Navegação ----------------------------- */
 export const navLinks = [
   { label: "INÍCIO", id: "inicio" },
-  { label: "SOBRE NÓS", id: "sobre" },
   { label: "SERVIÇOS", id: "servicos" },
-  { label: "PORTFÓLIO", id: "portfolio" },
+  { label: "SOBRE NÓS", id: "sobre" },
   { label: "PROCESSO", id: "processo" },
   { label: "CONTATO", id: "contato" },
 ]
@@ -52,7 +50,8 @@ export const navLinks = [
 export type ServiceIcon =
   | "social"
   | "sites"
-  | "landing"
+  | "automation"
+  | "software"
   | "print"
   | "identity"
 
@@ -62,22 +61,28 @@ export const services: {
   icon: ServiceIcon
 }[] = [
   {
+    title: "Criação de Sites",
+    description:
+      "Sites institucionais, blogs, e-commerce e landing pages. Responsivos e otimizados para uma experiência incrível.",
+    icon: "sites",
+  },
+  {
     title: "Mídias Sociais",
     description:
       "Gestão estratégica de redes sociais, criação de conteúdo e campanhas que conectam sua marca ao seu público.",
     icon: "social",
   },
   {
-    title: "Criação de Sites",
+    title: "Automação",
     description:
-      "Sites institucionais, blogs e portais modernos, responsivos e otimizados para uma experiência incrível.",
-    icon: "sites",
+      "Automatizamos tarefas e integramos processos para reduzir trabalhos manuais, aumentar a produtividade e tornar sua operação mais eficiente.",
+    icon: "automation",
   },
   {
-    title: "Landing Pages (LP)",
+    title: "Desenvolvimento de Software",
     description:
-      "Páginas de alta conversão para campanhas, lançamentos e captação de leads com foco em resultados.",
-    icon: "landing",
+      "Criamos sistemas personalizados, seguros e escaláveis, desenvolvidos para atender às necessidades e impulsionar o crescimento do seu negócio.",
+    icon: "software",
   },
   {
     title: "Criativos Impressos",
@@ -95,8 +100,8 @@ export const services: {
 
 /* -------------------------- Estatísticas --------------------------- */
 export const stats = [
-  { value: "+120", label: "projetos entregues", icon: "trending" as const },
-  { value: "+80", label: "clientes atendidos", icon: "users" as const },
+  { value: "+230", label: "projetos entregues", icon: "trending" as const },
+  { value: "+50", label: "clientes atendidos", icon: "users" as const },
   { value: "100%", label: "compromisso com resultados", icon: "target" as const },
   { value: "Soluções", label: "personalizadas para cada marca", icon: "sparkles" as const },
 ]
@@ -142,74 +147,12 @@ export const processSteps: {
   },
 ]
 
-/* ---------------------------- Portfólio ---------------------------- */
-export type PortfolioCategory =
-  | "Branding"
-  | "Social Media"
-  | "Websites"
-  | "Tecnologia"
-  | "Landing Pages"
-  | "Design"
-
-export type Project = {
-  name: string
-  category: PortfolioCategory
-  description: string
-  image: string
-  link?: string
-}
-
-// Para substituir: troque nome, categoria, descrição, imagem e link.
-export const projects: Project[] = [
-  {
-    name: "Projeto 01",
-    category: "Branding",
-    description: "Identidade visual completa e sistema de marca para lançamento.",
-    image: "/portfolio/projeto-01.png",
-    link: "#",
-  },
-  {
-    name: "Projeto 02",
-    category: "Websites",
-    description: "Portal institucional responsivo com foco em performance.",
-    image: "/portfolio/projeto-02.png",
-    link: "#",
-  },
-  {
-    name: "Projeto 03",
-    category: "Social Media",
-    description: "Gestão de conteúdo e campanhas para redes sociais.",
-    image: "/portfolio/projeto-03.png",
-    link: "#",
-  },
-  {
-    name: "Projeto 04",
-    category: "Landing Pages",
-    description: "Página de alta conversão para captação de leads.",
-    image: "/portfolio/projeto-04.png",
-    link: "#",
-  },
-  {
-    name: "Projeto 05",
-    category: "Tecnologia",
-    description: "Plataforma digital sob medida com integrações.",
-    image: "/portfolio/projeto-05.png",
-    link: "#",
-  },
-  {
-    name: "Projeto 06",
-    category: "Design",
-    description: "Direção criativa e peças gráficas para campanha.",
-    image: "/portfolio/projeto-06.png",
-    link: "#",
-  },
-]
-
 /* ------------------------- Links do footer ------------------------- */
 export const footerServices = [
-  "Mídias Sociais",
   "Criação de Sites",
-  "Landing Pages",
+  "Mídias Sociais",
+  "Automação",
+  "Desenvolvimento de Software",
   "Criativos Impressos",
   "Identidade Visual",
 ]

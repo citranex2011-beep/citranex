@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react"
+import { Phone, MapPin } from "lucide-react"
 import { Logo } from "@/components/ui/logo"
 import { SocialLinks } from "@/components/ui/social-links"
 import {
@@ -77,15 +77,6 @@ export function Footer() {
                 >
                   <Phone className="h-4 w-4 shrink-0 text-brand-lilac" />
                   {contact.phoneLabel}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${contact.email}`}
-                  className="flex items-center gap-3 transition-colors hover:text-foreground"
-                >
-                  <Mail className="h-4 w-4 shrink-0 text-brand-lilac" />
-                  {contact.email}
                 </a>
               </li>
               <li className="flex items-center gap-3">
