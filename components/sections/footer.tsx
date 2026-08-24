@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react"
-import { Logo } from <citranex-logo></citranex-logo>
+import { Logo } from "@/components/ui/logo"
 import { SocialLinks } from "@/components/ui/social-links"
 import {
   navLinks,
