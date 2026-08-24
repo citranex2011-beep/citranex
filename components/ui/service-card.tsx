@@ -25,6 +25,12 @@ export function ServiceCard({
       {/* Glow interno no hover */}
       <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-brand-purple/0 blur-2xl transition-colors duration-500 group-hover:bg-brand-purple/20" />
 
+      {/* Sweep/brilho diagonal no hover */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-[300%] motion-reduce:hidden"
+      />
+
       <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg border border-border text-brand-lilac transition-colors duration-300 group-hover:border-brand-purple/50">
         <Icon className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5" />
       </span>
