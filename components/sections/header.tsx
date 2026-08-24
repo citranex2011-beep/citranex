@@ -4,6 +4,8 @@ import { useEffect, useState } from "react"
 import { Menu, X, ArrowRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Logo } from "@/components/ui/logo"
+import { ScrollProgress } from "@/components/ui/scroll-progress"
+import { MagneticButton } from "@/components/ui/magnetic-button"
 import { navLinks, whatsappLink } from "@/data/site"
 
 export function Header() {
@@ -84,7 +86,8 @@ export function Header() {
         </ul>
 
         <div className="hidden lg:block">
-          <a
+          <MagneticButton
+            as="a"
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
@@ -92,7 +95,7 @@ export function Header() {
           >
             Fale Conosco
             <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
+          </MagneticButton>
         </div>
 
         {/* Botão mobile */}
@@ -106,6 +109,8 @@ export function Header() {
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </nav>
+
+      <ScrollProgress />
 
       {/* Painel mobile */}
       <div
