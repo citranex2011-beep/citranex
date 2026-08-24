@@ -1,63 +1,51 @@
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 /**
- * Símbolo "C" da Citranex — recriação vetorial da referência de marca
- * (gradiente roxo -> azul -> ciano).
+ * Símbolo "C" da Citranex — usa o asset oficial em `public/logo-c.png`.
  *
- * NOTA: caso o arquivo oficial do símbolo seja disponibilizado, substitua
- * o conteúdo deste componente por um <img>/<Image> apontando para o asset.
+ * Dimensões nativas: 515x448. O componente aceita `className` para
+ * sobrescrever o tamanho padrão (`h-8 w-8`).
  */
 export function CitranexMark({
   className,
-  idSuffix = "brand",
 }: {
   className?: string
-  idSuffix?: string
 }) {
-  const gid = `citranex-c-${idSuffix}`
   return (
-    <svg
-      viewBox="0 0 104 104"
-      className={cn("h-8 w-8", className)}
-      role="img"
-      aria-label="Símbolo Citranex"
-    >
-      <defs>
-        <linearGradient id={gid} x1="18" y1="12" x2="90" y2="94" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#7A3CFF" />
-          <stop offset="52%" stopColor="#3A7DFF" />
-          <stop offset="100%" stopColor="#00E1FF" />
-        </linearGradient>
-      </defs>
-      {/* Corpo em "C" com abertura à direita e recorte diagonal superior */}
-      <path
-        d="M84.6 24.4 L61.5 34.8 A28 28 0 1 0 72.8 70.7 L87.7 84.1 A48 48 0 1 1 84.6 24.4 Z"
-        fill={`url(#${gid})`}
-      />
-    </svg>
+    <Image
+      src="/logo-c.png"
+      alt="Símbolo Citranex"
+      width={515}
+      height={448}
+      className={cn("h-8 w-auto shrink-0", className)}
+      priority={false}
+    />
   )
 }
 
 /**
- * Logotipo horizontal: símbolo + wordmark "CITRANEX".
- * Usa a fonte da interface (Raleway) com tracking largo, conforme a marca.
+ * Logotipo horizontal: símbolo "C" + wordmark "CITRANEX".
+ * Usa os assets oficiais em `public/logo-c.png` e `public/logo-wordmark.png`.
  */
 export function Logo({
   className,
   wordmark = true,
-  idSuffix = "header",
 }: {
   className?: string
   wordmark?: boolean
-  idSuffix?: string
 }) {
   return (
     <span className={cn("inline-flex items-center gap-2.5 select-none", className)}>
-      <CitranexMark idSuffix={idSuffix} className="h-8 w-8 shrink-0" />
+      <CitranexMark />
       {wordmark && (
-        <span className="font-sans text-lg font-bold tracking-[0.35em] text-foreground">
-          CITRANE<span className="text-gradient-brand">X</span>
-        </span>
+        <Image
+          src="/logo-wordmark.png"
+          alt="CITRANEX"
+          width={1250}
+          height={204}
+          className="h-5 w-auto sm:h-6"
+        />
       )}
     </span>
   )

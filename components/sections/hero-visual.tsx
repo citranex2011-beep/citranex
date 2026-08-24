@@ -35,8 +35,7 @@ export function HeroVisual() {
         <div className="relative">
           <div className="absolute inset-0 -z-10 scale-125 rounded-full bg-brand-blue/25 blur-2xl" />
           <CitranexMark
-            idSuffix="hero"
-            className="h-40 w-40 drop-shadow-[0_18px_40px_rgba(122,60,255,0.55)] sm:h-52 sm:w-52"
+            className="h-40 w-auto drop-shadow-[0_18px_40px_rgba(122,60,255,0.55)] sm:h-52"
           />
         </div>
       </div>

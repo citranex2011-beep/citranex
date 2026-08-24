@@ -44,15 +44,24 @@ export const metadata: Metadata = {
     title: "Citranex | Tecnologia, Design e Estratégia",
     description:
       "Tecnologia que conecta. Soluções que transformam. Criação de sites, mídias sociais, landing pages e identidade visual.",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Citranex — Tecnologia, Design e Estratégia",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Citranex | Tecnologia, Design e Estratégia",
     description:
       "Tecnologia que conecta. Soluções que transformam.",
+    images: ["/og.png"],
   },
   icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    icon: [{ url: "/logo-c.png", type: "image/png" }],
     apple: "/apple-icon.png",
   },
 }
