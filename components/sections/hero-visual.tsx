@@ -32,7 +32,7 @@ export function HeroVisual() {
 
       {/* Símbolo flutuante */}
       <div className="absolute left-1/2 top-[42%] flex -translate-x-1/2 -translate-y-1/2 animate-float-slow">
-        <div className="translate-y-[30px]">
+        <div className="translate-y-[35px]">
           <div className="relative">
             <div className="absolute inset-0 -z-10 scale-125 rounded-full bg-brand-blue/25 blur-2xl" />
             <CitranexMark
