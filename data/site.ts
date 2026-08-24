@@ -33,7 +33,7 @@ export function whatsappLink(
 /* ----------------------------- Redes ------------------------------- */
 export const socialLinks = [
   { name: "Instagram", href: "https://www.instagram.com/citranex?igsi=MWprb3VucWcyNzI3cg==", icon: "instagram" as const },
-  { name: "LinkedIn", href: "https://linkedin.com/company/citranex", icon: "linkedin" as const },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/citranex/", icon: "linkedin" as const },
   { name: "Behance", href: "https://www.behance.net/citranedesign", icon: "behance" as const },
 ]
 
