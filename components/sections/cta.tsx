@@ -31,7 +31,7 @@ export function CTA() {
                 variant="outline"
                 className="shrink-0 border-white/60 bg-white/10 text-white backdrop-blur hover:border-white hover:bg-white/20 hover:text-white"
               >
-                Vamos conversar
+                Solicite uma proposta
               </WhatsAppButton>
             </div>
           </div>
