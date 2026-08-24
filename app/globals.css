@@ -103,9 +103,6 @@
   .bg-gradient-brand {
     background-image: linear-gradient(100deg, #7a3cff 0%, #3a7dff 55%, #00e1ff 120%);
   }
-  .bg-gradient-brand-soft {
-    background-image: linear-gradient(120deg, #1a1140 0%, #131a3d 45%, #0c1f36 100%);
-  }
   .border-gradient-brand {
     border-color: transparent;
     background-image: linear-gradient(var(--card), var(--card)),

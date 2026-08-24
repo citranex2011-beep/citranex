@@ -1,10 +1,9 @@
 import { CitranexMark } from "@/components/ui/logo"
 
 /**
- * Composição visual do Hero — símbolo "C" flutuante sobre pedestal
- * circular futurista, com glow, anéis luminosos e pontos tecnológicos.
- * Construída em CSS/SVG (sem imagens genéricas), mantendo a identidade
- * Citranex como elemento central.
+ * Composição visual do Hero — símbolo "C" flutuante com halo, anéis
+ * luminosos e pontos tecnológicos. Construída em CSS/SVG (sem imagens
+ * genéricas), mantendo a identidade Citranex como elemento central.
  */
 export function HeroVisual() {
   return (
@@ -32,24 +31,13 @@ export function HeroVisual() {
 
       {/* Símbolo flutuante */}
       <div className="absolute left-1/2 top-[42%] flex -translate-x-1/2 -translate-y-1/2 animate-float-slow">
-        <div className="translate-y-[35px]">
+        <div className="translate-y-0">
           <div className="relative">
             <div className="absolute inset-0 -z-10 scale-125 rounded-full bg-brand-blue/25 blur-2xl" />
             <CitranexMark
               className="h-40 w-auto drop-shadow-[0_18px_40px_rgba(122,60,255,0.55)] sm:h-52"
             />
           </div>
-        </div>
-      </div>
-
-      {/* Pedestal circular futurista */}
-      <div className="absolute bottom-[14%] left-1/2 -translate-x-1/2">
-        <div className="relative h-10 w-64 sm:w-72">
-          {/* Base elíptica com gradiente */}
-          <div className="absolute inset-0 rounded-[100%] border border-brand-purple/40 bg-gradient-brand-soft" />
-          <div className="absolute inset-x-6 top-1/2 h-px -translate-y-1/2 bg-gradient-brand opacity-70" />
-          {/* Reflexo/glow do pedestal */}
-          <div className="absolute -bottom-6 left-1/2 h-12 w-48 -translate-x-1/2 rounded-[100%] bg-brand-cyan/25 blur-2xl" />
         </div>
       </div>
     </div>
