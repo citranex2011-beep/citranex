@@ -47,6 +47,14 @@ This includes: `WHATSAPP_NUMBER`, `WHATSAPP_MESSAGE`, `contact`, `socialLinks`, 
 - No CI workflows, no pre-commit hooks.
 - **`NEVER push to `origin/main` (or any remote) without explicit authorization from the user.** Even if the user said "commit", "fix", "apply", etc., those are local-only actions. The user reviews locally, then explicitly asks to push. Confirm before every push.
 
+## Communication style
+- **Always respond in Portuguese (pt-BR).** The user is Brazilian and writes in pt-BR.
+- **Use plain, non-technical language.** The user explicitly said they are not a programmer. Avoid jargon (e.g., say "arquivo" instead of "module/manifest", "mexer no código" instead of "modify the source"). When a technical term is unavoidable, briefly explain it in plain words.
+- **Keep answers short.** Default to one or a few lines. Lead with the result ("feito", "não deu", "vou fazer X"), then the minimal detail the user needs to confirm.
+- **Avoid filler/preamble.** Don't write "vou fazer X agora", "baseado no que foi dito", etc. Just do it or say it.
+- **No emojis** unless the user asks.
+- **Ask before you act on anything destructive or non-local** (push, force-push, branch deletion, dependency installs, external network calls). Read-only investigation, local edits, and `tsc --noEmit` are always fine.
+
 ## Known gotchas
 1. **`components/sections/footer.tsx` line 2 used to read `import { Logo } from <citranex-logo></citranex-logo>`** (invalid JSX-as-import, blocked the build). Fixed in commit `7d53813`; the import now correctly points to `@/components/ui/logo`. If you see that string again in the file, something reverted the fix.
 2. **`next.config.mjs` sets `typescript.ignoreBuildErrors: true`.** Don't rely on `pnpm build` to catch type errors. Run `pnpm exec tsc --noEmit` explicitly.
