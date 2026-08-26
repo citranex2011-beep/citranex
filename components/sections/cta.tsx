@@ -11,9 +11,6 @@ export function CTA() {
             <div className="pointer-events-none absolute inset-0" aria-hidden="true">
               <div className="absolute right-8 top-6 h-24 w-24 bg-dot-grid opacity-25" />
               <div className="absolute -bottom-20 -right-10 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
-              <svg className="absolute left-4 bottom-4 h-24 w-40 text-white/20" viewBox="0 0 160 96" fill="none">
-                <path d="M0 20 H120 M20 48 H160 M0 76 H100" stroke="currentColor" strokeWidth="1" />
-              </svg>
             </div>
 
             <div className="relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
