@@ -22,7 +22,7 @@ export function BackToTop() {
       type="button"
       onClick={onClick}
       aria-label="Voltar ao topo"
-      className={`fixed right-[max(1.5rem,calc(1.5rem+env(safe-area-inset-right)))] bottom-[max(5.5rem,calc(5.5rem+env(safe-area-inset-bottom)))] z-40 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-card/80 text-muted-foreground backdrop-blur-md transition-all duration-300 hover:scale-[1.05] hover:border-brand-purple/60 hover:text-brand-lilac hover:shadow-[0_0_24px_-8px_rgba(122,60,255,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-safe:hover:scale-[1.05] ${
+      className={`fixed right-[max(1.5rem,calc(1.5rem+env(safe-area-inset-right)))] bottom-[max(5.5rem,calc(5.5rem+env(safe-area-inset-bottom)))] z-40 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-500 text-white transition-all duration-300 hover:scale-[1.05] hover:text-brand-lilac hover:shadow-[0_0_24px_-8px_rgba(122,60,255,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-safe:hover:scale-[1.05] ${
         visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-2 opacity-0"
       }`}
     >
