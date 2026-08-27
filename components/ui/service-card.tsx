@@ -8,7 +8,7 @@ import {
   Printer,
   Gem,
   Check,
-  LogOut,
+  CircleArrowRight,
 } from "lucide-react"
 import type { ServiceIcon } from "@/data/site"
 
@@ -70,7 +70,7 @@ export function ServiceCard({
         {/* FRENTE (em fluxo, define a altura do card) */}
         <div className="relative z-10 flex flex-col p-6 [backface-visibility:hidden]">
           {/* Seta discreta (pista visual de toque, só em dispositivos touch) */}
-          <LogOut
+          <CircleArrowRight
             aria-hidden="true"
             className="pointer-coarse:absolute pointer-coarse:right-6 pointer-coarse:top-6 hidden h-4 w-4 text-muted-foreground pointer-coarse:block"
           />
