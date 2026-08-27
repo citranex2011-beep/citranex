@@ -8,6 +8,7 @@ import {
   Printer,
   Gem,
   Check,
+  ArrowRight,
 } from "lucide-react"
 import type { ServiceIcon } from "@/data/site"
 
@@ -68,6 +69,12 @@ export function ServiceCard({
       >
         {/* FRENTE (em fluxo, define a altura do card) */}
         <div className="relative z-10 flex flex-col p-6 [backface-visibility:hidden]">
+          {/* Seta discreta (pista visual de toque, só em dispositivos touch) */}
+          <ArrowRight
+            aria-hidden="true"
+            className="pointer-coarse:absolute pointer-coarse:right-6 pointer-coarse:top-6 hidden h-4 w-4 text-muted-foreground pointer-coarse:block"
+          />
+
           <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg border border-border text-brand-lilac transition-colors duration-300 group-hover:border-brand-purple/50">
             <Icon className="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-0.5" />
           </span>
