@@ -8,7 +8,6 @@ import {
   Printer,
   Gem,
   Check,
-  RotateCw,
 } from "lucide-react"
 import type { ServiceIcon } from "@/data/site"
 
@@ -78,12 +77,6 @@ export function ServiceCard({
           <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
             {description}
           </p>
-
-          {/* Dica de toque (apenas em dispositivos touch) */}
-          <div className="pointer-coarse:absolute pointer-coarse:bottom-6 pointer-coarse:right-6 hidden items-center gap-1.5 text-xs text-muted-foreground pointer-coarse:flex">
-            <span>Ver benefícios</span>
-            <RotateCw className="h-3 w-3" />
-          </div>
         </div>
 
         {/* VERSO (absoluto, rotacionado 180deg para ficar de frente após o giro) */}
@@ -103,12 +96,6 @@ export function ServiceCard({
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Dica de toque (apenas em dispositivos touch) */}
-          <div className="pointer-coarse:absolute pointer-coarse:bottom-6 pointer-coarse:right-6 hidden items-center gap-1.5 text-xs text-muted-foreground pointer-coarse:flex">
-            <RotateCw className="h-3 w-3" />
-            <span>Voltar</span>
           </div>
         </div>
       </div>
