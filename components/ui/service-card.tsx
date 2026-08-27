@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import {
   MessageSquareHeart,
   MonitorSmartphone,
@@ -9,6 +8,7 @@ import {
   Printer,
   Gem,
   Check,
+  RotateCw,
 } from "lucide-react"
 import type { ServiceIcon } from "@/data/site"
 
@@ -26,22 +26,27 @@ export function ServiceCard({
   description,
   icon,
   benefits,
+  isFlipped,
+  onToggle,
+  discover = false,
 }: {
   title: string
   description: string
   icon: ServiceIcon
   benefits: string[]
+  isFlipped: boolean
+  onToggle: () => void
+  discover?: boolean
 }) {
   const Icon = iconMap[icon]
-  const [flipped, setFlipped] = useState(false)
 
   return (
     <button
       type="button"
-      onClick={() => setFlipped((f) => !f)}
-      aria-pressed={flipped}
+      onClick={onToggle}
+      aria-pressed={isFlipped}
       aria-label={
-        flipped
+        isFlipped
           ? `${title} — voltar para descrição`
           : `${title} — ver benefícios`
       }
@@ -58,8 +63,8 @@ export function ServiceCard({
 
       {/* Wrapper 3D — gira no eixo Y para mostrar o verso */}
       <div
-        className={`relative transition-transform duration-700 [transform-style:preserve-3d] motion-reduce:duration-0 ${
-          flipped ? "[transform:rotateY(180deg)]" : ""
+        className={`relative transition-transform duration-700 [transform-style:preserve-3d] motion-reduce:duration-0 ${discover ? "card-discover" : ""} ${
+          isFlipped ? "[transform:rotateY(180deg)]" : ""
         } group-hover:[transform:rotateY(180deg)]`}
       >
         {/* FRENTE (em fluxo, define a altura do card) */}
@@ -73,6 +78,12 @@ export function ServiceCard({
           <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
             {description}
           </p>
+
+          {/* Dica de toque (apenas em dispositivos touch) */}
+          <div className="pointer-coarse:mt-3 hidden items-center justify-center gap-1.5 text-xs text-muted-foreground pointer-coarse:flex">
+            <span>Ver benefícios</span>
+            <RotateCw className="h-3 w-3" />
+          </div>
         </div>
 
         {/* VERSO (absoluto, rotacionado 180deg para ficar de frente após o giro) */}
@@ -92,6 +103,12 @@ export function ServiceCard({
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Dica de toque (apenas em dispositivos touch) */}
+          <div className="pointer-coarse:absolute pointer-coarse:bottom-6 pointer-coarse:left-0 pointer-coarse:right-0 hidden items-center justify-center gap-1.5 text-xs text-muted-foreground pointer-coarse:flex">
+            <RotateCw className="h-3 w-3" />
+            <span>Voltar</span>
           </div>
         </div>
       </div>

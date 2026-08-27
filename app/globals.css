@@ -196,6 +196,15 @@
     transform: rotate(-360deg);
   }
 }
+@keyframes card-discover {
+  0%,
+  100% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(28deg);
+  }
+}
 
 .animate-float-slow {
   animation: float-slow 7s ease-in-out infinite;
@@ -208,6 +217,9 @@
 }
 .animate-ring-rotate {
   animation: ring-rotate 26s linear infinite;
+}
+.card-discover {
+  animation: card-discover 1.2s ease-in-out 1;
 }
 
 /* Scroll reveal ------------------------------------------------------ */
@@ -237,7 +249,8 @@
   .animate-spin-slow,
   .animate-ring-rotate,
   .animate-bounce-slow,
-  .bg-gradient-brand-animated {
+  .bg-gradient-brand-animated,
+  .card-discover {
     animation: none !important;
   }
 }

@@ -1,9 +1,41 @@
+"use client"
+
+import { useEffect, useRef, useState } from "react"
 import { SectionLabel } from "@/components/ui/section-title"
 import { Reveal } from "@/components/ui/reveal"
 import { ServiceCard } from "@/components/ui/service-card"
 import { services } from "@/data/site"
 
 export function Services() {
+  const [flippedId, setFlippedId] = useState<string | null>(null)
+  const [discovering, setDiscovering] = useState(false)
+  const hasDiscoveredRef = useRef(false)
+
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    if (!window.matchMedia("(pointer: coarse)").matches) return
+    if (hasDiscoveredRef.current) return
+
+    const node = document.getElementById("servicos")
+    if (!node) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting && !hasDiscoveredRef.current) {
+            hasDiscoveredRef.current = true
+            setDiscovering(true)
+            observer.disconnect()
+            window.setTimeout(() => setDiscovering(false), 1300)
+          }
+        }
+      },
+      { threshold: 0.25 },
+    )
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section id="servicos" className="relative border-t border-border py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
@@ -31,7 +63,16 @@ export function Services() {
           <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {services.map((service, i) => (
               <Reveal key={service.title} delay={i * 70}>
-                <ServiceCard {...service} />
+                <ServiceCard
+                  {...service}
+                  isFlipped={flippedId === service.title}
+                  onToggle={() =>
+                    setFlippedId((prev) =>
+                      prev === service.title ? null : service.title,
+                    )
+                  }
+                  discover={discovering && i === 0}
+                />
               </Reveal>
             ))}
           </div>
