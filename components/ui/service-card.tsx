@@ -76,7 +76,7 @@ export function ServiceCard({
         </div>
 
         {/* VERSO (absoluto, rotacionado 180deg para ficar de frente após o giro) */}
-        <div className="absolute inset-0 z-20 flex items-center justify-center p-6 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+        <div className="absolute inset-0 z-20 flex items-center justify-start p-6 [backface-visibility:hidden] [transform:rotateY(180deg)]">
           <div className="w-fit max-w-full">
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-lilac">
               O que sua empresa ganha
