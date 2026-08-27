@@ -75,20 +75,20 @@ export function ServiceCard({
 
       {/* VERSO (overlay absoluto, ocupa a mesma área da frente) */}
       <div
-        className={`absolute inset-0 z-20 flex flex-col gap-4 p-6 transition-opacity duration-500 motion-reduce:transition-none ${
+        className={`absolute inset-0 z-20 flex flex-col gap-3 p-6 transition-opacity duration-500 motion-reduce:transition-none ${
           flipped
             ? "opacity-100"
             : "pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100"
         }`}
       >
-        <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-lilac">
+        <p className="text-center text-xs font-bold uppercase tracking-[0.16em] text-brand-lilac">
           O que sua empresa ganha
         </p>
-        <ul className="flex flex-1 flex-col justify-center gap-3">
+        <ul className="flex flex-col items-center gap-3">
           {benefits.map((benefit) => (
             <li
               key={benefit}
-              className="flex items-start gap-2.5 text-sm leading-relaxed text-muted-foreground"
+              className="flex items-start gap-2.5 text-center text-sm leading-relaxed text-muted-foreground"
             >
               <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-cyan" />
               <span>{benefit}</span>
