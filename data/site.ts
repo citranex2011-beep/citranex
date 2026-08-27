@@ -59,42 +59,73 @@ export const services: {
   title: string
   description: string
   icon: ServiceIcon
+  benefits: string[]
 }[] = [
   {
     title: "Criação de Sites",
     description:
       "Sites institucionais, blogs, e-commerce e landing pages. Responsivos e otimizados para uma experiência incrível.",
     icon: "sites",
+    benefits: [
+      "Mais credibilidade para sua marca",
+      "Melhor experiência para o cliente",
+      "Presença digital preparada para conversão",
+    ],
   },
   {
     title: "Mídias Sociais",
     description:
       "Gestão estratégica de redes sociais, criação de conteúdo e campanhas que conectam sua marca ao seu público.",
     icon: "social",
+    benefits: [
+      "Presença digital consistente",
+      "Maior conexão com seu público",
+      "Comunicação alinhada aos objetivos da marca",
+    ],
   },
   {
     title: "Criativos Impressos",
     description:
       "Materiais gráficos que comunicam com impacto: folders, cartões, banners, catálogos e muito mais.",
     icon: "print",
+    benefits: [
+      "Comunicação profissional em cada detalhe",
+      "Identidade consistente",
+      "Mais impacto nos materiais da sua empresa",
+    ],
   },
   {
     title: "Identidade Visual",
     description:
       "Construímos marcas fortes e memoráveis com design estratégico e direção criativa completa.",
     icon: "identity",
+    benefits: [
+      "Mais reconhecimento de marca",
+      "Comunicação visual consistente",
+      "Posicionamento mais profissional",
+    ],
   },
   {
     title: "Automação",
     description:
       "Automatizamos tarefas e integramos processos para reduzir trabalhos manuais, aumentar a produtividade e tornar sua operação mais eficiente.",
     icon: "automation",
+    benefits: [
+      "Menos tarefas manuais",
+      "Mais produtividade",
+      "Processos mais ágeis e eficientes",
+    ],
   },
   {
     title: "Desenvolvimento de Software",
     description:
       "Criamos sistemas personalizados, seguros e escaláveis, desenvolvidos para atender às necessidades e impulsionar o crescimento do seu negócio.",
     icon: "software",
+    benefits: [
+      "Soluções adaptadas ao seu negócio",
+      "Mais controle sobre processos",
+      "Tecnologia preparada para acompanhar o crescimento",
+    ],
   },
 ]
 
