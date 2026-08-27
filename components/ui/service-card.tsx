@@ -80,7 +80,7 @@ export function ServiceCard({
           </p>
 
           {/* Dica de toque (apenas em dispositivos touch) */}
-          <div className="pointer-coarse:mt-3 hidden items-center justify-center gap-1.5 text-xs text-muted-foreground pointer-coarse:flex">
+          <div className="pointer-coarse:absolute pointer-coarse:bottom-6 pointer-coarse:right-6 hidden items-center gap-1.5 text-xs text-muted-foreground pointer-coarse:flex">
             <span>Ver benefícios</span>
             <RotateCw className="h-3 w-3" />
           </div>
@@ -106,7 +106,7 @@ export function ServiceCard({
           </div>
 
           {/* Dica de toque (apenas em dispositivos touch) */}
-          <div className="pointer-coarse:absolute pointer-coarse:bottom-6 pointer-coarse:left-0 pointer-coarse:right-0 hidden items-center justify-center gap-1.5 text-xs text-muted-foreground pointer-coarse:flex">
+          <div className="pointer-coarse:absolute pointer-coarse:bottom-6 pointer-coarse:right-6 hidden items-center gap-1.5 text-xs text-muted-foreground pointer-coarse:flex">
             <RotateCw className="h-3 w-3" />
             <span>Voltar</span>
           </div>
