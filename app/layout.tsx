@@ -2,6 +2,7 @@ import { Analytics } from "@vercel/analytics/next"
 import type { Metadata, Viewport } from "next"
 import { Raleway, JetBrains_Mono } from "next/font/google"
 import { WhatsAppFab } from "@/components/ui/whatsapp-fab"
+import { BackToTop } from "@/components/ui/back-to-top"
 import "./globals.css"
 
 const raleway = Raleway({
@@ -82,6 +83,7 @@ export default function RootLayout({
       <body className="bg-background font-sans antialiased">
         {children}
         <WhatsAppFab />
+        <BackToTop />
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
